@@ -1,0 +1,861 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: ABS BOO SHIFT STEER TPEC MAB BPEC
+
+
+BO_ 120 ULC_Report: 8 STEER
+ SG_ TMOUT : 13|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PRE_ST : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PRE_PD : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ OVERRIDE : 29|1@1+ (1,0) [0|0] ""  MAB
+ SG_ MAX_RATE : 56|6@1+ (8,0) [0|0] "deg/s"  MAB
+ SG_ MAX_ANG : 48|7@1+ (5,0) [0|0] "degrees"  MAB
+ SG_ ACCEL_REF : 32|8@1- (0.05,0) [0|0] "m/s^2"  MAB
+ SG_ ACCEL_MEAS : 40|8@1- (0.05,0) [0|0] "m/s^2"  MAB
+ SG_ CURV : 31|1@1+ (1,0) [0|0] ""  MAB
+ SG_ STEER : 30|1@1+ (1,0) [0|0] ""  MAB
+ SG_ MODE : 15|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PEDALS : 14|1@1+ (1,0) [0|0] ""  MAB
+ SG_ SPEED_REF : 0|13@1- (0.02,0) [0|0] "m/s"  MAB
+ SG_ SPEED_MEAS : 16|13@1- (0.02,0) [0|0] "m/s"  MAB
+
+BO_ 119 ULC_Config: 8 MAB
+ SG_ ANG_ACCEL : 24|8@1+ (0.02,0) [0.5|5.1] "rad/s^2"  STEER
+ SG_ LIN_DECEL : 8|8@1+ (0.025,0) [0.3|6] "m/s^2"  STEER
+ SG_ LIN_ACCEL : 0|8@1+ (0.025,0) [0.3|3] "m/s^2"  STEER
+ SG_ LAT_ACCEL : 16|8@1+ (0.05,0) [1|12.75] "m/s^2"  STEER
+
+BO_ 118 ULC_Command: 8 MAB
+ SG_ CLEAR : 37|1@1+ (1,0) [0|0] ""  STEER
+ SG_ PEDALS : 36|1@1+ (1,0) [0|0] ""  STEER
+ SG_ STEER : 35|1@1+ (1,0) [0|0] ""  STEER
+ SG_ SHIFT : 34|1@1+ (1,0) [0|0] ""  STEER
+ SG_ PARK : 33|1@1+ (1,0) [0|0] ""  STEER
+ SG_ CURV M : 32|1@1+ (1,0) [0|0] ""  STEER
+ SG_ CURV_CMD m1 : 16|16@1- (6.1E-006,0) [-0.1998848|0.1998787] "1/m"  STEER
+ SG_ YAW_CMD m0 : 16|16@1- (0.00025,0) [-8.192|8.19175] "rad/s"  STEER
+ SG_ LIN_VEL : 0|16@1- (0.0025,0) [-7|45] "m/s"  STEER
+
+BO_ 121 DriverAssist_Report: 3 STEER
+ SG_ ACCE : 17|1@1+ (1,0) [0|0] ""  MAB
+ SG_ ACCB : 18|1@1+ (1,0) [0|0] ""  MAB
+ SG_ AEBP : 14|1@1+ (1,0) [0|0] ""  MAB
+ SG_ AEBE : 13|1@1+ (1,0) [0|0] ""  MAB
+ SG_ AEBA : 15|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FCWE : 11|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FCWA : 12|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DECEL_SRC : 8|2@1+ (1,0) [0|0] ""  MAB
+ SG_ DECEL : 0|8@1+ (0.0625,0) [0|0] "m/s^2"  MAB
+
+BO_ 126 License: 8 STEER
+ SG_ FEAT_BASE_TRIALS_USED m0 : 32|16@1+ (1,0) [0|0] ""  MAB
+ SG_ FEAT_BASE_TRIALS_REMAINING m0 : 48|16@1+ (1,0) [0|0] ""  MAB
+ SG_ FEAT_BASE_TRIAL m0 : 17|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FEAT_BASE_ENABLED m0 : 16|1@1+ (1,0) [0|0] ""  MAB
+ SG_ EXPIRED : 10|1@1+ (1,0) [0|0] ""  MAB
+ SG_ TRIAL : 9|1@1+ (1,0) [0|0] ""  MAB
+ SG_ READY : 8|1@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC5 m128 : 56|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC4 m128 : 48|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC3 m128 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC2 m128 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC1 m128 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MAC0 m128 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE9 m130 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE8 m130 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE7 m130 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE6 m130 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE5 m129 : 56|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE4 m129 : 48|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE3 m129 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE2 m129 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE1 m129 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ DATE0 m129 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN16 m133 : 48|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN15 m133 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN14 m133 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN13 m133 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN12 m133 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN11 m132 : 56|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN10 m132 : 48|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN09 m132 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN08 m132 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN07 m132 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN06 m132 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN05 m131 : 56|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN04 m131 : 48|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN03 m131 : 40|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN02 m131 : 32|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN01 m131 : 24|8@1+ (1,0) [0|0] ""  MAB
+ SG_ VIN00 m131 : 16|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MUX M : 0|8@1+ (1,0) [0|0] ""  MAB
+
+BO_ 127 Version: 8 BPEC
+ SG_ PLATFORM : 8|8@1+ (1,0) [0|0] ""  MAB
+ SG_ MODULE : 0|8@1+ (1,0) [0|0] ""  MAB
+ SG_ BUILD : 48|16@1+ (1,0) [0|0] ""  MAB
+ SG_ MINOR : 32|16@1+ (1,0) [0|0] ""  MAB
+ SG_ MAJOR : 16|16@1+ (1,0) [0|0] ""  MAB
+
+BO_ 117 ThrottleInfo_Report: 8 STEER
+ SG_ APEDRATE : 32|8@1- (0.04,0) [-5.12|5.08] "%/ms"  MAB
+ SG_ APEDPC : 16|10@1+ (0.1,0) [0|99.9] "%"  MAB
+ SG_ RPM : 0|16@1+ (0.25,0) [0|0] "RPM"  MAB
+
+BO_ 116 BrakeInfo_Report: 8 STEER
+ SG_ TRACE : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ TRACA : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ STABE : 61|1@1+ (1,0) [0|0] ""  MAB
+ SG_ STABA : 60|1@1+ (1,0) [0|0] ""  MAB
+ SG_ AOG : 48|10@1- (0.035,0) [-17.92|17.885] "m/s^2"  MAB
+ SG_ ABSE : 59|1@1+ (1,0) [0|0] ""  MAB
+ SG_ ABSA : 58|1@1+ (1,0) [0|0] ""  MAB
+ SG_ WHLTRQ : 32|14@1- (4,0) [-32768|32764] "Nm"  MAB
+ SG_ PBRAKE : 30|2@1+ (1,0) [0|0] ""  MAB
+ SG_ STATNRY : 15|1@1+ (1,0) [0|0] ""  MAB
+ SG_ HSASTAT : 12|3@1+ (1,0) [0|0] ""  MAB
+ SG_ HSAMODE : 28|2@1+ (1,0) [0|0] ""  MAB
+ SG_ BRKTRQR : 0|12@1+ (4,0) [0|16380] "Nm"  MAB
+ SG_ BRKTRQA : 16|12@1+ (4,0) [0|16380] "Nm"  MAB
+
+BO_ 115 Surround_Report: 8 STEER
+ SG_ ENSNR : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTSNR : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ SONAR11 : 52|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR10 : 48|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR09 : 44|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR08 : 40|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR07 : 36|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR06 : 32|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR05 : 28|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR04 : 24|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR03 : 20|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR02 : 16|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR01 : 12|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ SONAR00 : 8|4@1+ (0.15,0.15) [0.3|2.4] "m"  MAB
+ SG_ BLISRE : 7|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BLISRA : 6|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BLISLE : 3|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BLISLA : 2|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CTARE : 5|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CTARA : 4|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CTALE : 1|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CTALA : 0|1@1+ (1,0) [0|0] ""  MAB
+
+BO_ 114 FuelLevel_Report: 2 STEER
+ SG_ FUEL : 0|16@1- (0.108696,0) [0|100] "%"  MAB
+
+BO_ 113 TirePressure_Report: 8 STEER
+ SG_ RR : 48|16@1+ (1,0) [0|0] "kPa"  MAB
+ SG_ RL : 32|16@1+ (1,0) [0|0] "kPa"  MAB
+ SG_ FR : 16|16@1+ (1,0) [0|0] "kPa"  MAB
+ SG_ FL : 0|16@1+ (1,0) [0|0] "kPa"  MAB
+
+BO_ 112 WheelPosition_Report: 8 STEER
+ SG_ RR : 48|16@1- (1,0) [0|0] "counts"  MAB
+ SG_ RL : 32|16@1- (1,0) [0|0] "counts"  MAB
+ SG_ FR : 16|16@1- (1,0) [0|0] "counts"  MAB
+ SG_ FL : 0|16@1- (1,0) [0|0] "counts"  MAB
+
+BO_ 111 GPS_3_Report: 8 STEER
+ SG_ NUMSAT : 59|5@1+ (1,0) [0|0] ""  MAB
+ SG_ QUALITY : 56|3@1+ (1,0) [0|0] ""  MAB
+ SG_ VDOP : 48|5@1+ (0.2,0) [0|0] ""  MAB
+ SG_ HDOP : 40|5@1+ (0.2,0) [0|0] ""  MAB
+ SG_ SPEED : 32|8@1+ (1,0) [0|0] "mph"  MAB
+ SG_ HEADING : 16|16@1+ (0.01,0) [0|0] "degrees"  MAB
+ SG_ ALTITUDE : 0|16@1- (0.25,0) [0|0] "m"  MAB
+
+BO_ 110 GPS_2_Report: 8 STEER
+ SG_ INF : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTGPS : 61|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PDOP : 56|5@1+ (0.2,0) [0|0] ""  MAB
+ SG_ COMPASS : 48|4@1+ (45,0) [0|315] "degrees"  MAB
+ SG_ SECONDS : 40|6@1+ (1,0) [0|59] "seconds"  MAB
+ SG_ MINUTES : 32|6@1+ (1,0) [0|59] "minutes"  MAB
+ SG_ HOURS : 24|5@1+ (1,0) [0|23] "hours"  MAB
+ SG_ DAY : 16|5@1+ (1,0) [1|31] "days"  MAB
+ SG_ MONTH : 8|4@1+ (1,0) [1|12] "months"  MAB
+ SG_ YEAR : 0|7@1+ (1,0) [0|99] "years"  MAB
+
+BO_ 109 GPS_1_Report: 8 STEER
+ SG_ VALID : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LONGITUDE : 32|31@1- (3.3333333E-007,0) [0|0] "degrees"  MAB
+ SG_ LATITUDE : 0|31@1- (3.3333333E-007,0) [0|0] "degrees"  MAB
+
+BO_ 108 Gyro_Report: 4 STEER
+ SG_ YAW : 16|16@1- (0.0002,0) [0|0] "rad/s"  MAB
+ SG_ ROLL : 0|16@1- (0.0002,0) [0|0] "rad/s"  MAB
+
+BO_ 107 Accel_Report: 6 STEER
+ SG_ VERT : 32|16@1- (0.01,0) [0|0] "m/s^2"  MAB
+ SG_ LONG : 16|16@1- (0.01,0) [0|0] "m/s^2"  MAB
+ SG_ LAT : 0|16@1- (0.01,0) [0|0] "m/s^2"  MAB
+
+BO_ 106 WheelSpeed_Report: 8 STEER
+ SG_ RR : 48|16@1- (0.01,0) [0|0] "rad/s"  MAB
+ SG_ RL : 32|16@1- (0.01,0) [0|0] "rad/s"  MAB
+ SG_ FR : 16|16@1- (0.01,0) [0|0] "rad/s"  MAB
+ SG_ FL : 0|16@1- (0.01,0) [0|0] "rad/s"  MAB
+
+BO_ 105 Misc_Report: 8 STEER
+ SG_ OTEMP : 56|8@1+ (0.5,-40) [-40|86.5] "°C"  MAB
+ SG_ RDEC : 39|1@1+ (1,0) [0|0] ""  MAB
+ SG_ RINC : 15|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LDUP : 35|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LDRHT : 38|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LDOK : 34|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LDLFT : 37|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LDDWN : 36|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CNCL : 14|1@1+ (1,0) [0|0] ""  MAB
+ SG_ RES : 13|1@1+ (1,0) [0|0] ""  MAB
+ SG_ ON : 11|1@1+ (1,0) [0|0] ""  MAB
+ SG_ OFF : 12|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BELTP : 33|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BELTD : 32|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PABAG : 31|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PDECT : 30|1@1+ (1,0) [0|0] ""  MAB
+ SG_ TRUNK : 29|1@1+ (1,0) [0|0] ""  MAB
+ SG_ HOOD : 28|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DOORR : 27|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DOORP : 25|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DOORL : 26|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DOORD : 24|1@1+ (1,0) [0|0] ""  MAB
+ SG_ WIPER : 4|4@1+ (1,0) [0|0] ""  MAB
+ SG_ TRNSTAT : 0|2@1+ (1,0) [0|0] ""  MAB
+ SG_ SINC : 18|1@1+ (1,0) [0|0] ""  MAB
+ SG_ SDEC : 19|1@1+ (1,0) [0|0] ""  MAB
+ SG_ ONOFF : 16|1@1+ (1,0) [0|0] ""  MAB
+ SG_ LKAEN : 22|1@1+ (1,0) [0|0] ""  MAB
+ SG_ HIBEAM : 2|2@1+ (1,0) [0|0] ""  MAB
+ SG_ GINC : 20|1@1+ (1,0) [0|0] ""  MAB
+ SG_ GDEC : 21|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTBUS : 23|1@1+ (1,0) [0|0] ""  MAB
+ SG_ RESCNCL : 17|1@1+ (1,0) [0|0] ""  MAB
+ SG_ AMBIENT : 8|3@1+ (1,0) [0|0] ""  MAB
+
+BO_ 104 TurnSignal_Command: 1 MAB
+ SG_ TRNCMD : 0|2@1+ (1,0) [0|0] ""  STEER
+
+BO_ 103 Gear_Report: 2 STEER
+ SG_ READY : 15|1@1+ (1,0) [0|0] ""  MAB
+ SG_ REJECT : 8|3@1+ (1,0) [0|0] ""  MAB
+ SG_ STATE : 0|3@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTBUS : 7|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DRIVER : 3|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CMD : 4|3@1+ (1,0) [0|0] ""  MAB
+
+BO_ 102 Gear_Command: 1 MAB
+ SG_ GCMD : 0|3@1+ (1,0) [0|0] ""  SHIFT,STEER
+ SG_ CLEAR : 7|1@1+ (1,0) [0|0] ""  SHIFT,STEER
+
+BO_ 101 Steering_Report: 8 STEER
+ SG_ FLTPWR : 58|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTWDC : 59|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTCAL : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ TMOUT : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ TORQUE : 48|8@1- (0.0625,0) [0|0] "Nm"  MAB
+ SG_ SPEED : 32|16@1+ (0.01,0) [0|0] "kph"  MAB
+ SG_ FLT2 : 61|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLT1 : 60|1@1+ (1,0) [0|0] ""  MAB
+ SG_ EN : 56|1@1+ (1,0) [0|0] ""  MAB
+ SG_ OVERRIDE : 57|1@1+ (1,0) [0|0] ""  MAB
+ SG_ CMD : 16|16@1- (0.1,0) [-470|470] "degrees"  MAB
+ SG_ ANGLE : 0|16@1- (0.1,0) [-470|470] "degrees"  MAB
+
+BO_ 100 Steering_Command: 8 MAB
+ SG_ QUIET : 20|1@1+ (1,0) [0|0] ""  STEER
+ SG_ COUNT : 56|8@1+ (1,0) [0|255] ""  STEER
+ SG_ IGNORE : 18|1@1+ (1,0) [0|0] ""  STEER
+ SG_ SVEL : 24|8@1+ (2,0) [0|500] "degrees/s"  STEER
+ SG_ CLEAR : 17|1@1+ (1,0) [0|0] ""  STEER
+ SG_ EN : 16|1@1+ (1,0) [0|0] ""  STEER
+ SG_ SCMD : 0|16@1- (0.1,0) [-470|470] "degrees"  STEER
+
+BO_ 99 Throttle_Report: 8 TPEC
+ SG_ FLTPWR : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ WDCSRC : 52|4@1+ (1,0) [0|0] ""  MAB
+ SG_ DRIVER : 58|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTWDC : 59|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PO : 32|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ PI : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ PC : 16|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ TMOUT : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLT2 : 61|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLT1 : 60|1@1+ (1,0) [0|0] ""  MAB
+ SG_ EN : 56|1@1+ (1,0) [0|0] ""  MAB
+ SG_ OVERRIDE : 57|1@1+ (1,0) [0|0] ""  MAB
+
+BO_ 98 Throttle_Command: 8 MAB
+ SG_ PCMD_NONE m0 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  TPEC
+ SG_ PCMD_PERCENT m2 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  TPEC
+ SG_ RES1 : 31|1@1+ (1,0) [0|0] ""  TPEC
+ SG_ CMD_TYPE M : 20|4@1+ (1,0) [0|0] ""  TPEC
+ SG_ COUNT : 56|8@1+ (1,0) [0|255] ""  TPEC
+ SG_ IGNORE : 26|1@1+ (1,0) [0|0] ""  TPEC
+ SG_ CLEAR : 25|1@1+ (1,0) [0|0] ""  TPEC
+ SG_ PCMD_PEDAL m1 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  TPEC
+ SG_ EN : 24|1@1+ (1,0) [0|0] ""  TPEC
+
+BO_ 97 Brake_Report: 8 BPEC
+ SG_ WDCSRC : 52|4@1+ (1,0) [0|0] ""  MAB
+ SG_ WDCBRK : 51|1@1+ (1,0) [0|0] ""  MAB
+ SG_ DRIVER : 58|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTWDC : 59|1@1+ (1,0) [0|0] ""  MAB
+ SG_ PI_PEDAL m0 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ PC_PEDAL m0 : 16|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ PO_PEDAL m0 : 32|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  MAB
+ SG_ PI_TORQUE m1 : 0|16@1+ (1,0) [0|0] "Nm"  MAB
+ SG_ PC_DECEL m1 : 16|16@1+ (0.001,0) [0|0] "m/s^2"  MAB
+ SG_ PO_DECEL m1 : 32|16@1+ (0.001,0) [0|0] "m/s^2"  MAB
+ SG_ TMOUT : 63|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLTPWR : 62|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLT2 : 61|1@1+ (1,0) [0|0] ""  MAB
+ SG_ FLT1 : 60|1@1+ (1,0) [0|0] ""  MAB
+ SG_ EN : 56|1@1+ (1,0) [0|0] ""  BOO,MAB
+ SG_ OVERRIDE : 57|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BTYPE M : 48|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BI : 50|1@1+ (1,0) [0|0] ""  MAB
+ SG_ BC : 49|1@1+ (1,0) [0|0] ""  BOO,MAB
+
+BO_ 96 Brake_Command: 8 MAB
+ SG_ PCMD_DECEL m6 : 0|16@1+ (0.001,0) [0|10] "m/s^2"  ABS
+ SG_ PCMD_NONE m0 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  ABS,BPEC
+ SG_ PCMD_TORQUE_RQ m4 : 0|16@1+ (1,0) [0|0] "Nm"  BPEC
+ SG_ PCMD_TORQUE m3 : 0|16@1+ (1,0) [0|0] "Nm"  BPEC
+ SG_ PCMD_PERCENT m2 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  ABS,BPEC
+ SG_ RES1 : 31|1@1+ (1,0) [0|0] ""  ABS,BPEC
+ SG_ CMD_TYPE M : 20|4@1+ (1,0) [0|0] ""  ABS,BPEC
+ SG_ COUNT : 56|8@1+ (1,0) [0|255] ""  ABS,BPEC
+ SG_ IGNORE : 26|1@1+ (1,0) [0|0] ""  ABS,BPEC
+ SG_ CLEAR : 25|1@1+ (1,0) [0|0] ""  ABS,BPEC
+ SG_ PCMD_PEDAL m1 : 0|16@1+ (1.52590218966964E-005,0) [0|1] "%/100"  BPEC
+ SG_ EN : 24|1@1+ (1,0) [0|0] ""  ABS,BPEC
+
+BO_TX_BU_ 127 : ABS,BOO,SHIFT,STEER,TPEC,BPEC;
+BO_TX_BU_ 103 : SHIFT,STEER;
+BO_TX_BU_ 97 : ABS,BPEC;
+
+
+CM_ BU_ ABS "ACC/AEB Braking Module";
+CM_ BU_ BOO "Brake On Off";
+CM_ BU_ SHIFT "Shift Module";
+CM_ BU_ STEER "Steering Module";
+CM_ BU_ TPEC "Throttle Pedal Emulator Combo";
+CM_ BU_ MAB "MicroAutoBox (User)";
+CM_ BU_ BPEC "Brake Pedal Emulator Combo";
+CM_ SG_ 120 TMOUT "ULC timeout";
+CM_ SG_ 120 PRE_ST "ULC steering preemtion status";
+CM_ SG_ 120 PRE_PD "ULC pedals preemtion status";
+CM_ SG_ 120 OVERRIDE "ULC driver override of brake/throttle/steering";
+CM_ SG_ 120 MAX_RATE "ULC maximum allowed steering velocity";
+CM_ SG_ 120 MAX_ANG "ULC maximum allowed steering angle";
+CM_ SG_ 120 ACCEL_REF "ULC internal acceleration reference being tracked";
+CM_ SG_ 120 ACCEL_MEAS "ULC acceleration";
+CM_ SG_ 120 CURV "ULC steering mode status";
+CM_ SG_ 120 STEER "ULC status of control of steering";
+CM_ SG_ 120 MODE "ULC tracking mode";
+CM_ SG_ 120 PEDALS "ULC status of control of brake and throttle pedals to regulate speed";
+CM_ SG_ 120 SPEED_REF "ULC internal speed reference beting tracked";
+CM_ SG_ 120 SPEED_MEAS "ULC vehicle speed";
+CM_ SG_ 119 ANG_ACCEL "ULC maximum angular acceleration to limit steering rate";
+CM_ SG_ 119 LIN_DECEL "ULC maximum linear acceleration";
+CM_ SG_ 119 LIN_ACCEL "ULC maximum linear acceleration";
+CM_ SG_ 119 LAT_ACCEL "ULC maximum lateral acceleration to limit steering angle";
+CM_ SG_ 118 CLEAR "ULC clear override (brake/throttle/steering)";
+CM_ SG_ 118 PEDALS "ULC enable control of brake and throttle pedals to regulate speed";
+CM_ SG_ 118 STEER "ULC enable control of steering";
+CM_ SG_ 118 SHIFT "ULC enable control of the shifter";
+CM_ SG_ 118 PARK "ULC enable shifting out of PARK";
+CM_ SG_ 118 CURV "ULC steering command mode";
+CM_ SG_ 118 CURV_CMD "ULC curvature command";
+CM_ SG_ 118 YAW_CMD "ULC yaw rate command";
+CM_ SG_ 118 LIN_VEL "ULC linear velocity command";
+CM_ SG_ 121 ACCE "ACC Enabled";
+CM_ SG_ 121 ACCB "ACC Braking";
+CM_ SG_ 121 AEBP "AEB Precharge";
+CM_ SG_ 121 AEBE "AEB Enabled (available)";
+CM_ SG_ 121 AEBA "AEB Active (braking)";
+CM_ SG_ 121 FCWE "FCW Enabled (available)";
+CM_ SG_ 121 FCWA "FCW Active";
+CM_ SG_ 121 DECEL_SRC "Driver Assist Deceleration Source (AEB/ACC)";
+CM_ SG_ 121 DECEL "Driver Assist Deceleration (AEB/ACC)";
+CM_ SG_ 126 FEAT_BASE_TRIALS_USED "Feature 'Base', number of trial counts used";
+CM_ SG_ 126 FEAT_BASE_TRIALS_REMAINING "Feature 'Base', number of trial counts remaining";
+CM_ SG_ 126 FEAT_BASE_TRIAL "Feature 'Base' trial status";
+CM_ SG_ 126 FEAT_BASE_ENABLED "Feature 'Base' enabled/licensed";
+CM_ SG_ 126 EXPIRED "License manager expired";
+CM_ SG_ 126 TRIAL "License manager trial";
+CM_ SG_ 126 READY "License manager ready";
+CM_ SG_ 126 MAC5 "MAC Address (byte 5)";
+CM_ SG_ 126 MAC4 "MAC Address (byte 4)";
+CM_ SG_ 126 MAC3 "MAC Address (byte 3)";
+CM_ SG_ 126 MAC2 "MAC Address (byte 2)";
+CM_ SG_ 126 MAC1 "MAC Address (byte 1)";
+CM_ SG_ 126 MAC0 "MAC Address (byte 0)";
+CM_ SG_ 126 DATE9 "Build date string (character 9)";
+CM_ SG_ 126 DATE8 "Build date string (character 8)";
+CM_ SG_ 126 DATE7 "Build date string (character 7)";
+CM_ SG_ 126 DATE6 "Build date string (character 6)";
+CM_ SG_ 126 DATE5 "Build date string (character 5)";
+CM_ SG_ 126 DATE4 "Build date string (character 4)";
+CM_ SG_ 126 DATE3 "Build date string (character 3)";
+CM_ SG_ 126 DATE2 "Build date string (character 2)";
+CM_ SG_ 126 DATE1 "Build date string (character 1)";
+CM_ SG_ 126 DATE0 "Build date string (character 0)";
+CM_ SG_ 126 VIN16 "VIN string (character 16)";
+CM_ SG_ 126 VIN15 "VIN string (character 15)";
+CM_ SG_ 126 VIN14 "VIN string (character 14)";
+CM_ SG_ 126 VIN13 "VIN string (character 13)";
+CM_ SG_ 126 VIN12 "VIN string (character 12)";
+CM_ SG_ 126 VIN11 "VIN string (character 11)";
+CM_ SG_ 126 VIN10 "VIN string (character 10)";
+CM_ SG_ 126 VIN09 "VIN string (character 9)";
+CM_ SG_ 126 VIN08 "VIN string (character 8)";
+CM_ SG_ 126 VIN07 "VIN string (character 7)";
+CM_ SG_ 126 VIN06 "VIN string (character 6)";
+CM_ SG_ 126 VIN05 "VIN string (character 5)";
+CM_ SG_ 126 VIN04 "VIN string (character 4)";
+CM_ SG_ 126 VIN03 "VIN string (character 3)";
+CM_ SG_ 126 VIN02 "VIN string (character 2)";
+CM_ SG_ 126 VIN01 "VIN string (character 1)";
+CM_ SG_ 126 VIN00 "VIN string (character 0)";
+CM_ SG_ 126 MUX "License multiplexer signal";
+CM_ SG_ 127 PLATFORM "Vehicle platform identifier";
+CM_ SG_ 127 MODULE "Module identifier for multiplexing";
+CM_ SG_ 127 BUILD "Firmware version build";
+CM_ SG_ 127 MINOR "Firmware version minor";
+CM_ SG_ 127 MAJOR "Firmware version major";
+CM_ SG_ 117 APEDRATE "Accelerator Pedal Rate";
+CM_ SG_ 117 APEDPC "Accelerator Pedal Percent";
+CM_ SG_ 117 RPM "Engine RPM";
+CM_ SG_ 116 TRACE "Traction Control Enabled";
+CM_ SG_ 116 TRACA "Traction Control Active";
+CM_ SG_ 116 STABE "Stability Control Enabled";
+CM_ SG_ 116 STABA "Stability Control Active";
+CM_ SG_ 116 AOG "Acceleration Over Ground Estimated";
+CM_ SG_ 116 ABSE "ABS Enabled";
+CM_ SG_ 116 ABSA "ABS Active";
+CM_ SG_ 116 WHLTRQ "Wheel Torque";
+CM_ SG_ 116 PBRAKE "Parking Brake Status";
+CM_ SG_ 116 STATNRY "Vehicle Stationary";
+CM_ SG_ 116 HSASTAT "Hill Start Assist Status";
+CM_ SG_ 116 HSAMODE "Hill Start Assist Mode";
+CM_ SG_ 116 BRKTRQR "Braking Torque Request";
+CM_ SG_ 116 BRKTRQA "Braking Torque Actual";
+CM_ SG_ 115 ENSNR "Sonar Enabled";
+CM_ SG_ 115 FLTSNR "Fault Sonar Sensors";
+CM_ SG_ 115 SONAR11 "Sonar Rear Right Side";
+CM_ SG_ 115 SONAR10 "Sonar Rear Right Corner";
+CM_ SG_ 115 SONAR09 "Sonar Rear Right Center";
+CM_ SG_ 115 SONAR08 "Sonar Rear Left Center";
+CM_ SG_ 115 SONAR07 "Sonar Rear Left Corner";
+CM_ SG_ 115 SONAR06 "Sonar Rear Left Side";
+CM_ SG_ 115 SONAR05 "Sonar Front Right Side";
+CM_ SG_ 115 SONAR04 "Sonar Front Right Corner";
+CM_ SG_ 115 SONAR03 "Sonar Front Right Center";
+CM_ SG_ 115 SONAR02 "Sonar Front Left Center";
+CM_ SG_ 115 SONAR01 "Sonar Front Left Corner";
+CM_ SG_ 115 SONAR00 "Sonar Front Left Side";
+CM_ SG_ 115 BLISRE "Blind Spot Information System Right Enabled";
+CM_ SG_ 115 BLISRA "Blind Spot Information System Right Alert";
+CM_ SG_ 115 BLISLE "Blind Spot Information System Left Enabled";
+CM_ SG_ 115 BLISLA "Blind Spot Information System Left Alert";
+CM_ SG_ 115 CTARE "Cross Traffic Alert Right Enabled";
+CM_ SG_ 115 CTARA "Cross Traffic Alert Right Alert";
+CM_ SG_ 115 CTALE "Cross Traffic Alert Left Enabled";
+CM_ SG_ 115 CTALA "Cross Traffic Alert Left Alert";
+CM_ SG_ 114 FUEL "Fuel Tank Level";
+CM_ SG_ 113 RR "Tire Pressure Rear Right";
+CM_ SG_ 113 RL "Tire Pressure Rear Left";
+CM_ SG_ 113 FR "Tire Pressure Front Right";
+CM_ SG_ 113 FL "Tire Pressure Front Left";
+CM_ SG_ 112 RR "Wheel Position Rear Right";
+CM_ SG_ 112 RL "Wheel Position Rear Left";
+CM_ SG_ 112 FR "Wheel Position Front Right";
+CM_ SG_ 112 FL "Wheel Position Front Left";
+CM_ SG_ 111 NUMSAT "GPS Number Of satellites";
+CM_ SG_ 111 QUALITY "GPS Fix Quality";
+CM_ SG_ 111 VDOP "GPS Vertical Dilution Of Precision";
+CM_ SG_ 111 HDOP "GPS Horizontal Dilution Of Precision";
+CM_ SG_ 111 SPEED "GPS Vehicle Speed";
+CM_ SG_ 111 HEADING "GPS Heading";
+CM_ SG_ 111 ALTITUDE "GPS Altitude";
+CM_ SG_ 110 INF "GPS Position Inferred";
+CM_ SG_ 110 FLTGPS "Fault GPS";
+CM_ SG_ 110 PDOP "GPS Position Dilution Of Precision";
+CM_ SG_ 110 COMPASS "Compass Heading";
+CM_ SG_ 110 SECONDS "GPS UTC Seconds";
+CM_ SG_ 110 MINUTES "GPS UTC Minutes";
+CM_ SG_ 110 HOURS "GPS UTC Hours";
+CM_ SG_ 110 DAY "GPS UTC Day";
+CM_ SG_ 110 MONTH "GPS UTC Month";
+CM_ SG_ 110 YEAR "GPS UTC Year";
+CM_ SG_ 109 VALID "GPS Valid";
+CM_ SG_ 109 LONGITUDE "GPS Longitude";
+CM_ SG_ 109 LATITUDE "GPS Latitude";
+CM_ SG_ 108 YAW "Yaw Rate";
+CM_ SG_ 108 ROLL "Roll Rate";
+CM_ SG_ 107 VERT "Vertical Acceleration";
+CM_ SG_ 107 LONG "Longitudinal Acceleration";
+CM_ SG_ 107 LAT "Lateral Acceleration";
+CM_ SG_ 106 RR "Wheel Speed Rear Right";
+CM_ SG_ 106 RL "Wheel Speed Rear Left";
+CM_ SG_ 106 FR "Wheel Speed Front Right";
+CM_ SG_ 106 FL "Wheel Speed Front Left";
+CM_ SG_ 105 OTEMP "Outside Air Temperature";
+CM_ SG_ 105 RDEC "Button ACC RES-";
+CM_ SG_ 105 RINC "Button ACC RES+";
+CM_ SG_ 105 LDUP "Button Left D-Pad Up";
+CM_ SG_ 105 LDRHT "Button Left D-Pad Right";
+CM_ SG_ 105 LDOK "Button Left D-Pad OK";
+CM_ SG_ 105 LDLFT "Button Left D-Pad Left";
+CM_ SG_ 105 LDDWN "Button Left D-Pad Down";
+CM_ SG_ 105 CNCL "Button Cruise Control CANCEL";
+CM_ SG_ 105 RES "Button Cruise Control RESUME";
+CM_ SG_ 105 ON "Button Cruise Control ON";
+CM_ SG_ 105 OFF "Button Cruise Control OFF";
+CM_ SG_ 105 BELTP "Passenger Seat Belt Buckle";
+CM_ SG_ 105 BELTD "Driver Seat Belt Buckle";
+CM_ SG_ 105 PABAG "Passenger Airbag";
+CM_ SG_ 105 PDECT "Passenger Detect";
+CM_ SG_ 105 TRUNK "Trunk Open";
+CM_ SG_ 105 HOOD "Hood Open";
+CM_ SG_ 105 DOORR "Rear Right Door";
+CM_ SG_ 105 DOORP "Passenger Door";
+CM_ SG_ 105 DOORL "Rear Left Door";
+CM_ SG_ 105 DOORD "Driver Door";
+CM_ SG_ 105 WIPER "Windshield Wiper Status";
+CM_ SG_ 105 TRNSTAT "Turn Signal Status";
+CM_ SG_ 105 SINC "Button ACC SET+";
+CM_ SG_ 105 SDEC "Button ACC SET-";
+CM_ SG_ 105 ONOFF "Button ACC On/Off Toggle";
+CM_ SG_ 105 LKAEN "Button LKA On/Off Toggle";
+CM_ SG_ 105 HIBEAM "High Beam Headlights";
+CM_ SG_ 105 GINC "Button ACC GAP+";
+CM_ SG_ 105 GDEC "Button ACC GAP-";
+CM_ SG_ 105 FLTBUS "Fault CAN Bus (misc)";
+CM_ SG_ 105 RESCNCL "Button ACC Resume/Cancel";
+CM_ SG_ 105 AMBIENT "Ambient Light Level";
+CM_ SG_ 104 TRNCMD "Turn Signal Command";
+CM_ SG_ 103 READY "Ready for shift command";
+CM_ SG_ 103 REJECT "Gear rejected enumeration";
+CM_ SG_ 103 STATE "Gear State";
+CM_ SG_ 103 FLTBUS "Fault CAN Bus (gear)";
+CM_ SG_ 103 DRIVER "Driver Override (gear)";
+CM_ SG_ 103 CMD "Gear Command (reported)";
+CM_ SG_ 102 GCMD "Gear Command";
+CM_ SG_ 102 CLEAR "Clear Override (gear)";
+CM_ SG_ 101 FLTPWR "Fault Power (steering)";
+CM_ SG_ 101 FLTWDC "Fault Watchdog Counter (steering)";
+CM_ SG_ 101 FLTCAL "Fault Steering Calibration";
+CM_ SG_ 101 TMOUT "Timeout (steering command)";
+CM_ SG_ 101 TORQUE "Steering Column Torque";
+CM_ SG_ 101 SPEED "Vehicle Speed";
+CM_ SG_ 101 FLT2 "Fault CAN Bus 2 (steering)";
+CM_ SG_ 101 FLT1 "Fault CAN Bus 1 (steering)";
+CM_ SG_ 101 EN "Steering Enabled";
+CM_ SG_ 101 OVERRIDE "Driver Override (steering)";
+CM_ SG_ 101 CMD "Steering Command (reported)";
+CM_ SG_ 101 ANGLE "Steering Wheel Angle";
+CM_ SG_ 100 QUIET "Disable the driver override audible warning";
+CM_ SG_ 100 COUNT "Optional Watchdog Counter (steering)";
+CM_ SG_ 100 IGNORE "Ignore override (steering)";
+CM_ SG_ 100 SVEL "Steering Command Rate Limit";
+CM_ SG_ 100 CLEAR "Clear Override (steering)";
+CM_ SG_ 100 EN "Steering Enable";
+CM_ SG_ 100 SCMD "Steering Command";
+CM_ SG_ 99 FLTPWR "Fault Power (throttle)";
+CM_ SG_ 99 WDCSRC "Watchdog Counter Source (throttle)";
+CM_ SG_ 99 DRIVER "Driver Activity (throttle)";
+CM_ SG_ 99 FLTWDC "Fault Watchdog Counter (throttle)";
+CM_ SG_ 99 PO "Throttle Pedal Output";
+CM_ SG_ 99 PI "Throttle Pedal Input";
+CM_ SG_ 99 PC "Throttle Pedal Command (reported)";
+CM_ SG_ 99 TMOUT "Timeout (throttle command)";
+CM_ SG_ 99 FLT2 "Fault CH2 (throttle)";
+CM_ SG_ 99 FLT1 "Fault CH1 (throttle)";
+CM_ SG_ 99 EN "Throttle Enabled";
+CM_ SG_ 99 OVERRIDE "Driver Override (throttle)";
+CM_ SG_ 98 PCMD_NONE "Throttle Command NONE (interpreted as PEDAL for backwards compatibility)";
+CM_ SG_ 98 PCMD_PERCENT "Throttle Pedal Command";
+CM_ SG_ 98 RES1 "Reserved bit (throttle)";
+CM_ SG_ 98 CMD_TYPE "Command type (throttle)";
+CM_ SG_ 98 COUNT "Optional Watchdog Counter (throttle)";
+CM_ SG_ 98 IGNORE "Ignore pedal override (throttle)";
+CM_ SG_ 98 CLEAR "Clear Override (throttle)";
+CM_ SG_ 98 PCMD_PEDAL "Throttle Pedal Command";
+CM_ SG_ 98 EN "Throttle Enable";
+CM_ SG_ 97 WDCSRC "Watchdog Counter Source (brakes)";
+CM_ SG_ 97 WDCBRK "Watchdog Counter braking status";
+CM_ SG_ 97 DRIVER "Driver Activity (brakes)";
+CM_ SG_ 97 FLTWDC "Fault Watchdog Counter (brakes)";
+CM_ SG_ 97 PI_PEDAL "Brake Pedal Input";
+CM_ SG_ 97 PC_PEDAL "Brake Pedal Command (reported)";
+CM_ SG_ 97 PO_PEDAL "Brake Pedal Output";
+CM_ SG_ 97 PI_TORQUE "Brake Pedal Input";
+CM_ SG_ 97 PC_DECEL "Brake Pedal Command (reported)";
+CM_ SG_ 97 PO_DECEL "Brake Pedal Output";
+CM_ SG_ 97 TMOUT "Timeout (brake command)";
+CM_ SG_ 97 FLTPWR "Fault Power (brakes)";
+CM_ SG_ 97 FLT2 "Fault CH2 (brakes)";
+CM_ SG_ 97 FLT1 "Fault CH1 (brakes)";
+CM_ SG_ 97 EN "Brakes Enabled";
+CM_ SG_ 97 OVERRIDE "Driver Override (brakes)";
+CM_ SG_ 97 BTYPE "Brake type (BPEC for hybrid vehicles, ABS for non-hybrid vehicles)";
+CM_ SG_ 97 BI "BOO Input";
+CM_ SG_ 97 BC "BOO Command";
+CM_ SG_ 96 PCMD_DECEL "Brake Deceleration Command";
+CM_ SG_ 96 PCMD_NONE "Brake Command NONE (interpreted as PEDAL for backwards compatibility)";
+CM_ SG_ 96 PCMD_TORQUE_RQ "Brake Torque Command";
+CM_ SG_ 96 PCMD_TORQUE "Brake Torque Command";
+CM_ SG_ 96 PCMD_PERCENT "Brake Percent Command";
+CM_ SG_ 96 RES1 "Reserved bit (brakes)";
+CM_ SG_ 96 CMD_TYPE "Command type (brakes)";
+CM_ SG_ 96 COUNT "Optional Watchdog Counter (brakes)";
+CM_ SG_ 96 IGNORE "Ignore pedal override (brakes)";
+CM_ SG_ 96 CLEAR "Clear Override (brakes)";
+CM_ SG_ 96 PCMD_PEDAL "Brake Pedal Command";
+CM_ SG_ 96 EN "Brakes Enable";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 100000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "FixedPeriodic","Event","EnabledPeriodic","NotUsed","NotUsed","EventPeriodic","NotUsed","NotUsed","NoMsgSendType";
+BA_DEF_  "NetworkSpeed" ENUM  "500kBits/s";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "NetworkSpeed" "500kBits/s";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_ "GenMsgCycleTime" BO_ 120 20;
+BA_ "GenMsgSendType" BO_ 120 0;
+BA_ "GenMsgCycleTime" BO_ 119 200;
+BA_ "GenMsgSendType" BO_ 119 0;
+BA_ "GenMsgCycleTime" BO_ 118 20;
+BA_ "GenMsgSendType" BO_ 118 0;
+BA_ "GenMsgCycleTime" BO_ 121 200;
+BA_ "GenMsgSendType" BO_ 121 5;
+BA_ "GenMsgSendType" BO_ 126 0;
+BA_ "GenMsgCycleTime" BO_ 126 250;
+BA_ "GenMsgSendType" BO_ 127 0;
+BA_ "GenMsgCycleTime" BO_ 127 1000;
+BA_ "GenMsgSendType" BO_ 117 0;
+BA_ "GenMsgCycleTime" BO_ 117 10;
+BA_ "GenMsgSendType" BO_ 116 0;
+BA_ "GenMsgCycleTime" BO_ 116 20;
+BA_ "GenMsgSendType" BO_ 115 5;
+BA_ "GenMsgCycleTime" BO_ 115 200;
+BA_ "GenMsgSendType" BO_ 114 0;
+BA_ "GenMsgCycleTime" BO_ 114 100;
+BA_ "GenMsgSendType" BO_ 113 0;
+BA_ "GenMsgCycleTime" BO_ 113 500;
+BA_ "GenMsgCycleTime" BO_ 112 20;
+BA_ "GenMsgSendType" BO_ 112 0;
+BA_ "GenMsgSendType" BO_ 111 0;
+BA_ "GenMsgCycleTime" BO_ 111 1000;
+BA_ "GenMsgSendType" BO_ 110 0;
+BA_ "GenMsgCycleTime" BO_ 110 1000;
+BA_ "GenMsgSendType" BO_ 109 0;
+BA_ "GenMsgCycleTime" BO_ 109 1000;
+BA_ "GenMsgSendType" BO_ 108 0;
+BA_ "GenMsgCycleTime" BO_ 108 10;
+BA_ "GenMsgSendType" BO_ 107 0;
+BA_ "GenMsgCycleTime" BO_ 107 10;
+BA_ "GenMsgSendType" BO_ 106 0;
+BA_ "GenMsgCycleTime" BO_ 106 10;
+BA_ "GenMsgSendType" BO_ 105 0;
+BA_ "GenMsgCycleTime" BO_ 105 50;
+BA_ "GenMsgSendType" BO_ 104 0;
+BA_ "GenMsgCycleTime" BO_ 104 50;
+BA_ "GenMsgSendType" BO_ 103 0;
+BA_ "GenMsgCycleTime" BO_ 103 50;
+BA_ "GenMsgSendType" BO_ 102 1;
+BA_ "GenMsgSendType" BO_ 101 0;
+BA_ "GenMsgCycleTime" BO_ 101 10;
+BA_ "GenMsgSendType" BO_ 100 0;
+BA_ "GenMsgCycleTime" BO_ 100 20;
+BA_ "GenMsgSendType" BO_ 99 0;
+BA_ "GenMsgCycleTime" BO_ 99 20;
+BA_ "GenMsgSendType" BO_ 98 0;
+BA_ "GenMsgCycleTime" BO_ 98 20;
+BA_ "GenMsgSendType" BO_ 97 0;
+BA_ "GenMsgCycleTime" BO_ 97 20;
+BA_ "GenMsgSendType" BO_ 96 0;
+BA_ "GenMsgCycleTime" BO_ 96 20;
+VAL_ 120 TMOUT 1 "Timeout" 0 "Valid" ;
+VAL_ 120 PRE_ST 1 "Control preempted" 0 "Not preempted" ;
+VAL_ 120 PRE_PD 1 "Control preempted" 0 "Not preempted" ;
+VAL_ 120 OVERRIDE 1 "Driver Override" 0 "No Override" ;
+VAL_ 120 CURV 1 "Curvature" 0 "Yaw Rate" ;
+VAL_ 120 STEER 1 "Active" 0 "Inactive" ;
+VAL_ 120 MODE 1 "Tight Tracking" 0 "Loose Tracking" ;
+VAL_ 120 PEDALS 1 "Active" 0 "Inactive" ;
+VAL_ 119 ANG_ACCEL 0 "Default: 1.0 rad/s^2" ;
+VAL_ 119 LIN_DECEL 0 "Default: 1.5 m/s^2" ;
+VAL_ 119 LIN_ACCEL 0 "Default: AUTO" ;
+VAL_ 119 LAT_ACCEL 0 "Default: 4.0 m/s^2" ;
+VAL_ 118 PEDALS 1 "Enable" 0 "Disable" ;
+VAL_ 118 STEER 1 "Enable" 0 "Disable" ;
+VAL_ 118 SHIFT 1 "Enable" 0 "Disable" ;
+VAL_ 118 PARK 1 "Enable" 0 "Disable" ;
+VAL_ 118 CURV 1 "Curvature" 0 "Yaw Rate" ;
+VAL_ 121 ACCE 1 "Enabled" 0 "Disabled" ;
+VAL_ 121 ACCB 1 "Braking" 0 "Inactive" ;
+VAL_ 121 AEBP 1 "Precharge" 0 "Inactive" ;
+VAL_ 121 AEBE 1 "Enabled" 0 "Disabled" ;
+VAL_ 121 AEBA 1 "Active" 0 "Inactive" ;
+VAL_ 121 FCWE 1 "Enabled" 0 "Disabled" ;
+VAL_ 121 FCWA 1 "Active" 0 "Inactive" ;
+VAL_ 121 DECEL_SRC 2 "ACC" 1 "AEB" 0 "NONE" ;
+VAL_ 126 FEAT_BASE_TRIAL 1 "Licensed as a trial" 0 "Not licensed as a trial" ;
+VAL_ 126 FEAT_BASE_ENABLED 1 "Successfully enabled/licensed" 0 "Not enabled/licensed" ;
+VAL_ 126 EXPIRED 1 "Some licenses past build date" 0 "No licenses past build date" ;
+VAL_ 126 TRIAL 1 "Some features licensed as trial" 0 "No features licensed as a trial" ;
+VAL_ 126 READY 1 "Ready" 0 "Waiting to resolve VIN" ;
+VAL_ 127 PLATFORM 1 "FORD_P5" 0 "FORD_CD4" ;
+VAL_ 127 MODULE 6 "BOO (Brake-On-Off for ABS)" 5 "ABS (ACC/AEB braking)" 4 "SHIFT (shifting)" 3 "STEER (steering)" 2 "TPEC (throttle)" 1 "BPEC (brake)" ;
+VAL_ 116 TRACE 1 "Enabled" 0 "Disabled" ;
+VAL_ 116 TRACA 1 "Active" 0 "Inactive" ;
+VAL_ 116 STABE 1 "Enabled" 0 "Disabled" ;
+VAL_ 116 STABA 1 "Active" 0 "Inactive" ;
+VAL_ 116 ABSE 1 "Enabled" 0 "Disabled" ;
+VAL_ 116 ABSA 1 "Active" 0 "Inactive" ;
+VAL_ 116 PBRAKE 3 "Fault" 2 "On" 1 "Transition" 0 "Off" ;
+VAL_ 116 STATNRY 1 "Stationary" 0 "Moving" ;
+VAL_ 116 HSASTAT 7 "Undefined" 6 "Failed" 5 "Slow Release" 4 "Fast Release" 3 "Active Released" 2 "Active Pressed" 1 "Finding Gradient" 0 "Inactive" ;
+VAL_ 116 HSAMODE 3 "Undefined" 2 "Manual" 1 "Auto" 0 "Off" ;
+VAL_ 115 ENSNR 1 "Enabled" 0 "Disabled" ;
+VAL_ 115 FLTSNR 1 "Fault" 0 "No Fault" ;
+VAL_ 115 SONAR11 0 "No Detection" ;
+VAL_ 115 SONAR10 0 "No Detection" ;
+VAL_ 115 SONAR09 0 "No Detection" ;
+VAL_ 115 SONAR08 0 "No Detection" ;
+VAL_ 115 SONAR07 0 "No Detection" ;
+VAL_ 115 SONAR06 0 "No Detection" ;
+VAL_ 115 SONAR05 0 "No Detection" ;
+VAL_ 115 SONAR04 0 "No Detection" ;
+VAL_ 115 SONAR03 0 "No Detection" ;
+VAL_ 115 SONAR02 0 "No Detection" ;
+VAL_ 115 SONAR01 0 "No Detection" ;
+VAL_ 115 SONAR00 0 "No Detection" ;
+VAL_ 115 BLISRE 1 "Enabled" 0 "Disabled" ;
+VAL_ 115 BLISRA 1 "Alert" 0 "No Alert" ;
+VAL_ 115 BLISLE 1 "Enabled" 0 "Disabled" ;
+VAL_ 115 BLISLA 1 "Alert" 0 "No Alert" ;
+VAL_ 115 CTARE 1 "Enabled" 0 "Disabled" ;
+VAL_ 115 CTARA 1 "Alert" 0 "No Alert" ;
+VAL_ 115 CTALE 1 "Enabled" 0 "Disabled" ;
+VAL_ 115 CTALA 1 "Alert" 0 "No Alert" ;
+VAL_ 111 QUALITY 2 "3D Fix" 1 "2D Fix" 0 "No Fix" ;
+VAL_ 110 INF 1 "Inferred Position" 0 "Actual Position" ;
+VAL_ 110 FLTGPS 1 "Fault" 0 "No Fault" ;
+VAL_ 109 VALID 1 "Valid" 0 "Invalid" ;
+VAL_ 105 OTEMP 255 "Invalid" 254 "Unknown" ;
+VAL_ 105 RDEC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 RINC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LDUP 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LDRHT 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LDOK 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LDLFT 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LDDWN 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 CNCL 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 RES 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 ON 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 OFF 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 BELTP 1 "Buckled" 0 "Unbuckled" ;
+VAL_ 105 BELTD 1 "Buckled" 0 "Unbuckled" ;
+VAL_ 105 PABAG 1 "Enabled" 0 "Disabled" ;
+VAL_ 105 PDECT 1 "Passenger" 0 "No Passenger" ;
+VAL_ 105 TRUNK 1 "Open" 0 "Closed" ;
+VAL_ 105 HOOD 1 "Open" 0 "Closed" ;
+VAL_ 105 DOORR 1 "Open" 0 "Closed" ;
+VAL_ 105 DOORP 1 "Open" 0 "Closed" ;
+VAL_ 105 DOORL 1 "Open" 0 "Closed" ;
+VAL_ 105 DOORD 1 "Open" 0 "Closed" ;
+VAL_ 105 WIPER 15 "NO_DATA" 14 "STALLED" 13 "RESERVED" 12 "AUTO_ADJUST" 11 "COURTESY_WIPE" 10 "AUTO_HIGH" 9 "AUTO_LOW" 8 "WASH" 7 "MIST_FLICK" 6 "MANUAL_HIGH" 5 "MANUAL_LOW" 4 "MANUAL_ON" 3 "MANUAL_OFF" 2 "OFF_MOVING" 1 "AUTO_OFF" 0 "OFF" ;
+VAL_ 105 TRNSTAT 2 "Right" 1 "Left" 0 "None" ;
+VAL_ 105 SINC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 SDEC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 ONOFF 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 LKAEN 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 HIBEAM 2 "HIGH" 1 "FLASH_TO_PASS" 0 "NULL" ;
+VAL_ 105 GINC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 GDEC 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 FLTBUS 1 "Fault" 0 "No Fault" ;
+VAL_ 105 RESCNCL 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 105 AMBIENT 7 "NO_DATA" 4 "TUNNEL_OFF" 3 "TUNNEL_ON" 2 "TWILIGHT" 1 "LIGHT" 0 "DARK" ;
+VAL_ 104 TRNCMD 2 "Right" 1 "Left" 0 "None" ;
+VAL_ 103 READY 1 "Ready to shift" 0 "Not ready to shift" ;
+VAL_ 103 REJECT 7 "Fault" 6 "Unsupported" 5 "Rejected by vehicle" 4 "Rotary PARK" 3 "Rotary LOW" 2 "Override" 1 "Shift in progress" 0 "Not rejected" ;
+VAL_ 103 STATE 5 "Low" 4 "Drive" 3 "Neutral" 0 "None" 2 "Reverse" 1 "Park" ;
+VAL_ 103 FLTBUS 1 "Fault" 0 "No Fault" ;
+VAL_ 103 DRIVER 1 "Last shift requested by driver" 0 "Last shift requested by-wire" ;
+VAL_ 103 CMD 5 "Low" 4 "Drive" 3 "Neutral" 0 "None" 2 "Reverse" 1 "Park" ;
+VAL_ 102 GCMD 5 "Low" 4 "Drive" 3 "Neutral" 0 "None" 2 "Reverse" 1 "Park" ;
+VAL_ 101 FLTPWR 1 "Fault" 0 "No Fault" ;
+VAL_ 101 FLTWDC 1 "Fault" 0 "No Fault" ;
+VAL_ 101 FLTCAL 1 "Fault" 0 "No Fault" ;
+VAL_ 101 TMOUT 1 "Timeout" 0 "Valid" ;
+VAL_ 101 FLT2 1 "Fault" 0 "No Fault" ;
+VAL_ 101 FLT1 1 "Fault" 0 "No Fault" ;
+VAL_ 101 EN 1 "Enabled" 0 "Disabled" ;
+VAL_ 101 OVERRIDE 1 "Driver Override" 0 "No Override" ;
+VAL_ 100 EN 1 "Enabled" 0 "Disable" ;
+VAL_ 99 FLTPWR 1 "Fault" 0 "No Fault" ;
+VAL_ 99 WDCSRC 15 "STEERING_REPORT" 14 "STEERING_COMMAND" 13 "STEERING_DISABLED" 12 "STEERING_COUNTER" 11 "THROTTLE_REPORT" 10 "THROTTLE_COMMAND" 9 "THROTTLE_DISABLED" 8 "THROTTLE_COUNTER" 7 "BRAKE_REPORT" 6 "BRAKE_COMMAND" 5 "BRAKE_DISABLED" 4 "BRAKE_COUNTER" 3 "OTHER_STEERING" 2 "OTHER_THROTTLE" 1 "OTHER_BRAKE" 0 "NONE" ;
+VAL_ 99 DRIVER 1 "Driver Activity" 0 "No Activity" ;
+VAL_ 99 FLTWDC 1 "Fault" 0 "No Fault" ;
+VAL_ 99 TMOUT 1 "Timeout" 0 "Valid" ;
+VAL_ 99 FLT2 1 "Fault" 0 "No Fault" ;
+VAL_ 99 FLT1 1 "Fault" 0 "No Fault" ;
+VAL_ 99 EN 1 "Enabled" 0 "Disabled" ;
+VAL_ 99 OVERRIDE 1 "Driver Override" 0 "No Override" ;
+VAL_ 98 CMD_TYPE 2 "PERCENT" 1 "PEDAL" 0 "NONE" ;
+VAL_ 98 EN 1 "Enabled" 0 "Disable" ;
+VAL_ 97 WDCSRC 15 "STEERING_REPORT" 14 "STEERING_COMMAND" 13 "STEERING_DISABLED" 12 "STEERING_COUNTER" 11 "THROTTLE_REPORT" 10 "THROTTLE_COMMAND" 9 "THROTTLE_DISABLED" 8 "THROTTLE_COUNTER" 7 "BRAKE_REPORT" 6 "BRAKE_COMMAND" 5 "BRAKE_DISABLED" 4 "BRAKE_COUNTER" 3 "OTHER_STEERING" 2 "OTHER_THROTTLE" 1 "OTHER_BRAKE" 0 "NONE" ;
+VAL_ 97 WDCBRK 1 "WDC applying brakes" 0 "Normal" ;
+VAL_ 97 DRIVER 1 "Driver Activity" 0 "No Activity" ;
+VAL_ 97 FLTWDC 1 "Fault" 0 "No Fault" ;
+VAL_ 97 TMOUT 1 "Timeout" 0 "Valid" ;
+VAL_ 97 FLTPWR 1 "Fault" 0 "No Fault" ;
+VAL_ 97 FLT2 1 "Fault" 0 "No Fault" ;
+VAL_ 97 FLT1 1 "Fault" 0 "No Fault" ;
+VAL_ 97 EN 1 "Enabled" 0 "Disabled" ;
+VAL_ 97 OVERRIDE 1 "Driver Override" 0 "No Override" ;
+VAL_ 97 BTYPE 1 "ABS" 0 "BPEC" ;
+VAL_ 97 BI 1 "On" 0 "Off" ;
+VAL_ 97 BC 1 "On" 0 "Off" ;
+VAL_ 96 CMD_TYPE 6 "DECEL" 4 "TORQUE_RQ" 3 "TORQUE" 2 "PERCENT" 1 "PEDAL" 0 "NONE" ;
+VAL_ 96 EN 1 "Enabled" 0 "Disable" ;
+
